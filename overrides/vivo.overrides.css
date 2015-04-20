@@ -1,0 +1,13 @@
+tef-header::shadow .tef-header {
+  border-bottom: 1px solid #e8e8e8;
+  background: white;
+}
+tef-header::shadow .tef-header h2 {
+  width: 120px;
+  height: 46px;
+  bottom: 26px;
+  left: 41px;
+}
+tef-header::shadow .tef-header h1 a {
+  color: #999;
+}

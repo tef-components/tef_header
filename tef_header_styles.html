@@ -1,0 +1,196 @@
+<core-style id="tef-header">
+  :host .tef-header,
+  .tef-header ::content {
+    position: relative;
+    height: 138px;
+    background: {{g.headerBg}} left bottom no-repeat;
+  }
+  :host .tef-header h1,
+  .tef-header ::content h1 {
+    display: none;
+    position: absolute;
+    bottom: 22px;
+    right: 32px;
+    color: #fff;
+    height: 34px;
+    margin: 0;
+    font-size: 32px;
+    font-weight: 300;
+  }
+  @media only screen and (min-width: {{g.widthXS}}) {
+    :host .tef-header h1,
+    .tef-header ::content h1 {
+      display: block;
+    }
+  }
+  :host .tef-header h1 a,
+  .tef-header ::content h1 a {
+    color: white;
+    text-decoration: none;
+  }
+  :host .tef-header h2,
+  .tef-header ::content h2 {
+    position: absolute;
+    bottom: 26px;
+    left: 24px;
+    background: {{g.headerLogo}} no-repeat;
+    height: 34px;
+    width: 200px;
+    margin: 0;
+    font-size: 0;
+  }
+  :host .tef-header nav,
+  .tef-header ::content nav {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    height: 32px;
+    padding: 0 32px;
+    background: {{g.headerNav}};
+    color: {{g.headerText}};
+    z-index: 98;
+  }
+  @media only screen and (min-width: {{g.widthSM}}) {
+    :host .tef-header nav,
+    .tef-header ::content nav {
+      position: relative;
+    }
+  }
+  :host .tef-header ul,
+  .tef-header ::content ul {
+    display: none;
+    position: absolute;
+    top: 32px;
+    right: 0;
+    background: white;
+    box-shadow: {{g.shadow}};
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  @media only screen and (min-width: {{g.widthSM}}) {
+    :host .tef-header ul,
+    .tef-header ::content ul {
+      display: block;
+      background: transparent;
+      top: 0;
+      right: 22px;
+      box-shadow: none;
+    }
+  }
+  :host .tef-header ul.show,
+  .tef-header ::content ul.show {
+    display: block;
+  }
+  :host .tef-header li,
+  .tef-header ::content li {
+    color: {{g.headerReverse}};
+    font-size: 12px;
+    line-height: 14px;
+    padding: 9px 40px;
+    border-bottom: 1px solid {{g.grey1}};
+    text-align: right;
+  }
+  @media only screen and (min-width: {{g.widthSM}}) {
+    :host .tef-header li,
+    .tef-header ::content li {
+      display: inline-block;
+      color: white;
+      border: none;
+      line-height: 32px;
+      padding: 0 10px;
+    }
+  }
+  :host .tef-header li span,
+  .tef-header ::content li span {
+    position: relative;
+    top: -2px;
+  }
+  :host .tef-header li a,
+  .tef-header ::content li a {
+    color: {{g.headerReverse}};
+    text-decoration: none;
+  }
+  @media only screen and (min-width: {{g.widthSM}}) {
+    :host .tef-header li a,
+    .tef-header ::content li a {
+      color: white;
+    }
+  }
+  :host .tef-header li a:hover span,
+  .tef-header ::content li a:hover span,
+  :host .tef-header li a:focus span,
+  .tef-header ::content li a:focus span,
+  :host .tef-header li a:active span,
+  .tef-header ::content li a:active span {
+    text-decoration: underline;
+  }
+  :host .tef-header li [icon],
+  .tef-header ::content li [icon] {
+    color: {{g.headerIcon}};
+    padding-left: 4px;
+    font-size: 16px;
+  }
+  :host .tef-header .tef-close,
+  .tef-header ::content .tef-close,
+  :host .tef-header .tef-menu,
+  .tef-header ::content .tef-menu {
+    position: absolute;
+    top: 0;
+    right: 32px;
+    height: 32px;
+    width: 40px;
+    border: none;
+    background: white;
+    color: {{g.headerReverse}};
+    font-size: 25px;
+    z-index: 99;
+    cursor: pointer;
+  }
+  :host .tef-header .tef-close.show,
+  .tef-header ::content .tef-close.show,
+  :host .tef-header .tef-menu.show,
+  .tef-header ::content .tef-menu.show {
+    display: block;
+  }
+  @media only screen and (min-width: {{g.widthSM}}) {
+    :host .tef-header .tef-close.show,
+    .tef-header ::content .tef-close.show,
+    :host .tef-header .tef-menu.show,
+    .tef-header ::content .tef-menu.show {
+      display: none;
+    }
+  }
+  :host .tef-header .tef-close:hover,
+  .tef-header ::content .tef-close:hover,
+  :host .tef-header .tef-menu:hover,
+  .tef-header ::content .tef-menu:hover,
+  :host .tef-header .tef-close:focus,
+  .tef-header ::content .tef-close:focus,
+  :host .tef-header .tef-menu:focus,
+  .tef-header ::content .tef-menu:focus,
+  :host .tef-header .tef-close:active,
+  .tef-header ::content .tef-close:active,
+  :host .tef-header .tef-menu:active,
+  .tef-header ::content .tef-menu:active {
+    background: white;
+    color: {{g.headerReverse}};
+  }
+  :host .tef-header .tef-close,
+  .tef-header ::content .tef-close {
+    display: none;
+  }
+  :host .tef-header .tef-menu,
+  .tef-header ::content .tef-menu {
+    background: {{g.headerNav}};
+    color: white;
+  }
+  @media only screen and (min-width: {{g.widthSM}}) {
+    :host .tef-header .tef-menu,
+    .tef-header ::content .tef-menu {
+      display: none;
+    }
+  }
+
+</core-style>

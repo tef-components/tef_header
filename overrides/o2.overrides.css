@@ -1,0 +1,16 @@
+
+tef-header::shadow .tef-header {
+  background-repeat: repeat-x;
+}
+tef-header::shadow .tef-header h2 {
+  width: 54px ;
+  height: 53px;
+  bottom: 33px;
+  left: 32px;
+}
+tef-header::shadow .tef-header h1 {
+  bottom: 30px;
+}
+tef-header::shadow .tef-header h1 a {
+  color: #032b5a;
+}

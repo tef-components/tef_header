@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>TEF components demo</title>
+    <meta name="viewport" content="width=device-width">
+    <link id="themeFile" rel="stylesheet" href="../theme_telefonica/css/components.telefonica.css">
+    <link id="themeFile2" rel="stylesheet" href="">
+    <script id="themeVars" src="../theme_telefonica/theme.telefonica.js"></script>
+    <link rel="import" href="tef_header.html">
+
+    <style>
+      header[columns] { padding-top: 30px; }
+      h1 { margin-top: 0; }
+      header > div { padding-top: 2px; }
+      code {
+        display: block;
+        overflow: hidden;
+      }
+      style {
+        display: block;
+        white-space: pre;
+        color: #0086B3;
+        border: 1px solid #cfcece;
+        background: #f2f2f2;
+        margin: 20px 0;
+        line-height: 25px;
+        overflow-y: auto;
+        border-radius: 4px;
+      }
+      /* demo page only */
+      .tef-header {
+        margin-top: 20px;
+      }
+      .tef-header nav {
+        position: relative;
+      }
+    </style>
+  </head>
+
+  <body>
+    <div class="tef-wrapper tef-content">
+      <header columns="2 xs1">
+        <h1>Headers</h1>
+        <div>
+          <label>Change theme</label>
+          <div class="tef-dropdown" icon="angle_down">
+            <select id="themeSelector">
+              <option value="telefonica">Telefónica</option>
+              <option value="movistar">Movistar</option>
+              <option value="o2">O2</option>
+              <option value="vivo">Vivo</option>
+            </select>
+          </div>
+        </div>
+      </header>
+
+      <tef-header>  
+            <tef-menu-element><span>Hello George!</span><i icon="user"></i></tef-menu-element>
+            <tef-menu-element><a href=""><span>Help</span><i icon="help_circle"></i></a></tef-menu-element>
+            <tef-menu-element><a href=""><span>Exit</span><i icon="close_circle"></i></a></tef-menu-element>        
+      </tef-header>
+      <code>
+        <style>
+      <header class="tef-header">
+        <nav>
+          <button class="tef-menu" icon="menu"></button>
+          <button class="tef-close" icon="close"></button>
+          <ul>
+            <li><span>Hello George!</span><i icon="user"></i></li>
+            <li><a href=""><span>Help</span><i icon="help_circle"></i></a></li>
+            <li><a href=""><span>Exit</span><i icon="close_circle"></i></a></li>
+          </ul>
+        </nav>
+        <h1><a href="/">Service name</a></h1>
+        <h2>Brand name</h2>
+      </header>
+        </style>
+      </code>
+    </div>
+
+    <script>
+      var theme = document.getElementById('themeSelector');
+      theme.addEventListener('change', function() {
+        var link = document.getElementById('themeFile');
+        link.href = '../theme_'
+          + theme.value + '/css/components.'
+          + theme.value + '.css';
+
+          document.head.removeChild(document.getElementById("themeVars"));
+          var linkVars = document.createElement('script');
+          linkVars.id = "themeVars";
+
+          linkVars.src = '../theme_'
+            + theme.value + '/theme.'
+            + theme.value + '.js';
+
+          document.head.appendChild(linkVars);
+          if (theme.value != "telefonica"){
+            document.getElementById("themeFile2").href = "overrides/"+theme.value+".overrides.css";
+          }else{
+            document.getElementById("themeFile2").href = "";
+          }
+      });
+    </script>
+  </body>
+</html>
