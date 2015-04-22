@@ -10,6 +10,18 @@
     <script id="themeVars" src="../theme_telefonica/theme.telefonica.js"></script>
     <link rel="import" href="tef_header.html">
 
+    <!-- Web Components polyfill -->
+    <script>
+      if ('registerElement' in document
+        && 'createShadowRoot' in HTMLElement.prototype
+        && 'import' in document.createElement('link')
+        && 'content' in document.createElement('template')) {
+      } else {
+        document.write('<script src="bower_components/webcomponentsjs/webcomponents.min.js"><\/script>');
+      }
+    </script>
+
+
     <style>
       header[columns] { padding-top: 30px; }
       h1 { margin-top: 0; }
@@ -30,10 +42,10 @@
         border-radius: 4px;
       }
       /* demo page only */
-      .tef-header {
+      tef-header::shadow .tef-header {
         margin-top: 20px;
       }
-      .tef-header nav {
+      ::shadow .tef-header nav {
         position: relative;
       }
     </style>

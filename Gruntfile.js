@@ -11,6 +11,15 @@ module.exports = function(grunt) {
         }
       }
     },
+    concat: {
+      default: {
+       src: [
+          'templates/tef.header.css',          
+          '../icons/fonts/icons.css'
+        ],
+        dest: 'templates/tef.header.css'
+      }
+    },
 
     includes: {
       files: {
@@ -87,13 +96,16 @@ module.exports = function(grunt) {
 
   grunt.registerTask('default', [
     'less',
+    'concat',
     'includes',
     'replace'
   ]);
 
   grunt.registerTask('release', [
     'less',
+    'concat',
     'includes',
+    'replace',
     'exec:add',
     'prompt',
     'exec:message',

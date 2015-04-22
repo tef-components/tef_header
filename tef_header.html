@@ -9,8 +9,8 @@
 		<core-style ref="tef-header"></core-style>
 		<header class="tef-header">
 			<nav>
-		    	<button onClick = "showMenu" class="tef-menu" icon="menu">Open</button>
-				<button onClick = "hideMenu" id="hideMenuBtn" class="tef-close" icon="close">Close</button>
+		    	<button on-click="{{showMenu}}" id="showMenuBtn" class="tef-menu" icon="menu"></button>
+				<button on-click="{{hideMenu}}" id="hideMenuBtn" class="tef-close" icon="close"></button>
 		        	<ul id = "menu">
 		        		<content select="tef-menu-element">
 		            	</content>
@@ -22,23 +22,22 @@
 	</template>
 	<script>
 		Polymer({
-			service:"Service Name",
+			service: "Service Name",
       		showMenu: function () {
-		        menu.setAttribute('class','show');
-		        hideMenuBtn.setAttribute('class','tef-close show');
+		        this.$.menu.setAttribute('class','show');
+		        this.$.hideMenuBtn.setAttribute('class','tef-close show');
 		      },
 
-			hideMenu:function () {
-		        menu.setAttribute('class','');
-		        hideMenuBtn.setAttribute('class','tef-close');
+			hideMenu: function () {
+		        this.$.menu.setAttribute('class','');
+		        this.$.hideMenuBtn.setAttribute('class','tef-close');
 		      },
 
 			domReady: function(){
 				for (var i=0; i < this.children.length;i++){
-					this.children[i].innerHTML = "<li>" + this.children[i].innerHTML +"</li>"
+					this.children[i].innerHTML = "<li>" + this.children[i].innerHTML +"</li>";
 				}
 			}
 		});			
-			
 	</script>	
 </polymer-element>
